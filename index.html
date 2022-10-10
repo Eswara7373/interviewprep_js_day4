@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Day 4</h2>
+
+    <h4>1.How many operators do we have in JS ?</h4>
+    <p>There are different types of JavaScript operators:</p>
+    <ul><li>Aritmetic Operators</li>
+    <li>Assignment Operators</li>
+    <li>Comparison Operators</li>
+    <li>Logical Operators</li>
+    <li>Conditional Operators</li>
+    <li>Type Operators</li></ul><hr>
+
+    <h4>2.What are pure functions?</h4>
+    <p>A Pure Function is a function (a block of code) that always returns the same result if the same arguments are passed. <br> 
+        It does not depend on any state or data change during a program’s execution. <br>
+        Rather, it only depends on its input arguments.</p><hr>
+    
+    <h4>3.What is callback hell</h4>
+    <p>Callback Hell is essentially nested callbacks stacked below one another forming a pyramid structure. <br>
+         Every callback depends/waits for the previous callback, thereby making a pyramid structure that affects the readability and maintainability of the code.</p><hr>
+
+    <h4>4.What are promises and why do we need them?</h4>
+    <p>Promises are used to handle asynchronous operations in JavaScript. They are easy to manage when dealing with multiple <br>
+      asynchronous operations where callbacks can create callback hell leading to unmanageable code. <br>
+      It allows you to associate handlers with an asynchronous action's eventual success value or failure reason. </p>
+      <pre>Example:   var promise = new Promise(function(resolve, reject) {
+                      resolve('my name is');
+                    })
+                    promise
+                   .then(function(successMessage) {
+                    console.log(successMessage);
+                 }, function(errorMessage) {
+                    console.log(errorMessage);
+                 })
+
+          output: my name is
+    </pre><hr>
+
+    <h4>5.What is promise chaining</h4>
+    <p>Promise chaining is a syntax that allows you to chain together multiple asynchronous tasks in a specific order. <br>
+      This is great for complex code where one asynchronous task needs to be performed after the completion of a different asynchronous task.</p><hr>
+
+    <h4>6.Give an example of async/await</h4>
+    <p>An async function is a function declared with the async keyword, and the await keyword is permitted within it. <br>
+     The async and await keywords enable asynchronous, promise-based behavior to be written in a cleaner style, <br>
+      avoiding the need to explicitly configure promise chains.</p>
+      <pre> Example:
+        function resolveAfter2Seconds() {
+            return new Promise(resolve => {
+              setTimeout(() => {
+                resolve('resolved');
+              }, 2000);
+            });
+          }
+          
+          async function asyncCall() {
+            console.log('calling');
+            const result = await resolveAfter2Seconds();
+            console.log(result);
+          }
+          asyncCall();
+
+  output: "calling"
+          "resolved"
+      </pre><hr>
+    <h4>7.What is the purpose of async/await keywords?</h4>
+    <p>The async keyword <b>turns a method into an async method, which allows you to use the await keyword in its body.</b> <br>
+         When the await keyword is applied, it suspends the calling method and yields control back to its caller until <br>
+          the awaited task is complete. await can only be used inside an async method.</p>
+          <hr>
+</body>
+</html>
